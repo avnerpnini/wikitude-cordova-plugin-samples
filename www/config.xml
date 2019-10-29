@@ -86,7 +86,7 @@
             <splash src="images/splash/ios/2048_1536.png" width="2048" height="1536" />
         </platform>
         
-        <plugin name="com.wikitude.phonegap.wikitudeplugin" source="npm" version="3.2.1" /><!--ar-->
+        <plugin name="com.wikitude.phonegap.wikitudeplugin" source="npm" /><!--ar-->
 
         
         <preference name="StatusBarBackgroundColor" value="#6f9ac0" />
