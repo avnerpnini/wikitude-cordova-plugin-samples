@@ -87,7 +87,7 @@
         </platform>
         
         <plugin name="cordova-plugin-file" source="npm" /><!--ar-->
-        <plugin name="com.wikitude.phonegap.wikitudeplugin" source="npm" /><!--ar-->
+        <plugin name="https://github.com/avnerpnini/wikitude-cordova-plugin.git"  /><!--ar-->
 
         
         <preference name="StatusBarBackgroundColor" value="#6f9ac0" />
