@@ -64,7 +64,7 @@
         </platform>
 
     <!-- splash -->
-        <splash src="splash.png" />
+        <!-- <splash src="splash.png" /> -->
         <platform name="android">
             <splash src="images/splash/android/mdpi.png"    qualifier="mdpi" />
             <splash src="images/splash/android/hdpi.png"    qualifier="hdpi" />
