@@ -32,7 +32,7 @@
         <preference name="fullscreen"      value="false" />
     </platform>
     <!-- icon -->
-        <icon src="icon.png" />
+        <!-- <icon src="icon.png" /> -->
         <platform name="android">
             <icon src="images/icons/android/mdpi.png"  qualifier="ldpi" />
             <icon src="images/icons/android/mdpi.png" qualifier="mdpi" />
