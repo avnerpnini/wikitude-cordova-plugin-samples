@@ -113,6 +113,8 @@
                 <string>This app requires Bluetooth to verify arrival to location.</string> 
             </config-file>
 
+        <plugin name="com.wikitude.phonegap.wikitudeplugin" source="npm" version="3.2.1" /><!--ar-->
+
         
         <preference name="StatusBarBackgroundColor" value="#6f9ac0" />
         <platform name="ios">
