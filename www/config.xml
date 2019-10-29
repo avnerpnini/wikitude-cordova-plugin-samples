@@ -89,11 +89,4 @@
         <plugin name="cordova-plugin-file" source="npm" /><!--ar-->
         <plugin name="https://github.com/avnerpnini/wikitude-cordova-plugin.git"  /><!--ar-->
 
-        
-        <preference name="StatusBarBackgroundColor" value="#6f9ac0" />
-        <platform name="ios">
-            <preference name="StatusBarOverlaysWebView" value="false" />
-        </platform>
-
-
 </widget>
