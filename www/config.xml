@@ -86,6 +86,7 @@
             <splash src="images/splash/ios/2048_1536.png" width="2048" height="1536" />
         </platform>
         
+        <plugin name="cordova-plugin-file" source="npm" /><!--ar-->
         <plugin name="com.wikitude.phonegap.wikitudeplugin" source="npm" /><!--ar-->
 
         
