@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "arnivut.net.wtg"
+        id        = "test.arnivut.net.wtg"
         versionCode = "3009"
         version   = "2.3.0">
-    <name>מציאות רבודה</name>
+    <name>מציאות רבודה טסט</name>
 
     <description>
        משחקי ניווט סלולרים
