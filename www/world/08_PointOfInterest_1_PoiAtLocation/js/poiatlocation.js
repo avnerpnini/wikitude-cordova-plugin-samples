@@ -15,7 +15,7 @@ var World = {
             reality view. This sample loads an AR.ImageResource when the World variable was defined. It will be
             reused for each marker that we will create afterwards.
         */
-        World.markerDrawableIdle = new AR.ImageResource("assets/marker_idle.png", {
+        World.markerDrawableIdle = new AR.ImageResource("assets/icon.png", {
             onError: World.onError
         });
 
@@ -25,7 +25,8 @@ var World = {
             defined for multiple targets. A target can be the camera, the radar or a direction indicator. Both the
             radar and direction indicators will be covered in more detail in later examples.
         */
-        var markerLocation = new AR.GeoLocation(poiData.latitude, poiData.longitude, poiData.altitude);
+        // var markerLocation = new AR.GeoLocation(poiData.latitude, poiData.longitude, poiData.altitude);
+        var markerLocation = new AR.GeoLocation(32.677081, 35.239265 , 100 );
         var markerImageDrawableIdle = new AR.ImageDrawable(World.markerDrawableIdle, 2.5, {
             zOrder: 0,
             opacity: 1.0
