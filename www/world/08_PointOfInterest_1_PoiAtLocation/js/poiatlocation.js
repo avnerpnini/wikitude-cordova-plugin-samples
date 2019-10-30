@@ -8,6 +8,7 @@ var World = {
 
     /* Called to inject new POI data. */
     loadPoisFromJsonData: function loadPoisFromJsonDataFn(poiData) {
+        console.log('loadPoisFromJsonData');
 
         /*
             The example Image Recognition already explained how images are loaded and displayed in the augmented
@@ -56,7 +57,7 @@ var World = {
 
     /* Location updates, fired every time you call architectView.setLocation() in native environment. */
     locationChanged: function locationChangedFn(lat, lon, alt, acc) {
-
+        console.log('locationChanged');
         /*
             The custom function World.onLocationChanged checks with the flag World.initiallyLoadedData if the
             function was already called. With the first call of World.onLocationChanged an object that contains geo
