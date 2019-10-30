@@ -105,18 +105,68 @@ var World = {
     /* Request POI data. */
     requestDataFromLocal: function requestDataFromLocalFn(centerPointLatitude, centerPointLongitude) {
         var poisToCreate = 20;
-        var poiData = [];
+        var poiData = [
+            {
+                "id": 1,
+                "longitude": "32.686753", 
+                "latitude": "35.390209",
+                "description": ("tavor"),
+                "altitude": "560.0",
+                "name": ("תבור")
+            },
+            {
+                "id": 2,
+                "longitude": "32.67259", 
+                "latitude": "35.08854",
+                "description": ("muchraka"),
+                "altitude": "463.0",
+                "name": ("מוחרקה")
+            },
+            {
+                "id": 3,
+                "longitude": "32.53560", 
+                "latitude": "35.37498",
+                "description": ("gilboa"),
+                "altitude": "294.0",
+                "name": ("גילבוע")
+            },
+            {
+                "id": 4,
+                "longitude": "32.98995", 
+                "latitude": "35.41678",
+                "description": ("miron"),
+                "altitude": "1145.0",
+                "name": ("מירון")
+            },
+            {
+                "id": 5,
+                "longitude": "33.30109", 
+                "latitude": "35.78644",
+                "description": ("hermon"),
+                "altitude": "2064.0",
+                "name": ("חרמון")
+            },
+            {
+                "id": 6,
+                "longitude": "33.27211", 
+                "latitude": "35.19454",
+                "description": ("accer"),
+                "altitude": "0.0",
+                "name": ("עכו")
+            },
 
-        for (var i = 0; i < poisToCreate; i++) {
-            poiData.push({
-                "id": (i + 1),
-                "longitude": (centerPointLongitude + (Math.random() / 5 - 0.1)),
-                "latitude": (centerPointLatitude + (Math.random() / 5 - 0.1)),
-                "description": ("This is the description of POI#" + (i + 1)),
-                "altitude": "100.0",
-                "name": ("POI#" + (i + 1))
-            });
-        }
+        ];
+        
+        // for (var i = 0; i < poisToCreate; i++) {
+        //     poiData.push({
+        //         "id": (i + 1),
+        //         "longitude": (centerPointLongitude + (Math.random() / 5 - 0.1)),
+        //         "latitude": (centerPointLatitude + (Math.random() / 5 - 0.1)),
+        //         "description": ("This is the description of POI#" + (i + 1)),
+        //         "altitude": "100.0",
+        //         "name": ("POI#" + (i + 1))
+        //     });
+        // }
         World.loadPoisFromJsonData(poiData);
     },
 
