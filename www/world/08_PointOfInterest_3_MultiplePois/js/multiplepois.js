@@ -187,3 +187,5 @@ AR.context.onLocationChanged = World.locationChanged;
     currently selected marker is deselected.
 */
 AR.context.onScreenClick = World.onScreenClick;
+
+AR.context.scene.cullingDistance = 1000000;
