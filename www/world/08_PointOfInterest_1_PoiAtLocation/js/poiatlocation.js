@@ -69,9 +69,9 @@ var World = {
             /* Creates a poi object with a random location near the user's location. */
             var poiData = {
                 "id": 1,
-                "longitude": (lon + (Math.random() / 5 - 0.1)),
-                "latitude": (lat + (Math.random() / 5 - 0.1)),
-                "altitude": 100.0
+                "longitude": 32.677081, 
+                "latitude": 35.239265 , 
+                "altitude": 230.0
             };
 
             World.loadPoisFromJsonData(poiData);
@@ -89,4 +89,4 @@ var World = {
     AR.context.onLocationChanged to null. In this case the function will not be called anymore and no further
     location updates will be received.
 */
-AR.context.onLocationChanged = null;
+AR.context.onLocationChanged = World.locationChanged;
