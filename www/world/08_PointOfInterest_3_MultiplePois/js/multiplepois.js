@@ -108,48 +108,48 @@ var World = {
         var poiData = [
             {
                 "id": 1,
-                "longitude": "32.686753", 
-                "latitude": "35.390209",
+                "latitude": "32.686753", 
+                "longitude": "35.390209",
                 "description": ("tavor"),
                 "altitude": "560.0",
                 "name": ("תבור")
             },
             {
                 "id": 2,
-                "longitude": "32.67259", 
-                "latitude": "35.08854",
+                "latitude": "32.67259", 
+                "longitude": "35.08854",
                 "description": ("muchraka"),
                 "altitude": "463.0",
                 "name": ("מוחרקה")
             },
             {
                 "id": 3,
-                "longitude": "32.53560", 
-                "latitude": "35.37498",
+                "latitude": "32.53560", 
+                "longitude": "35.37498",
                 "description": ("gilboa"),
                 "altitude": "294.0",
                 "name": ("גילבוע")
             },
             {
                 "id": 4,
-                "longitude": "32.98995", 
-                "latitude": "35.41678",
+                "latitude": "32.98995", 
+                "longitude": "35.41678",
                 "description": ("miron"),
                 "altitude": "1145.0",
                 "name": ("מירון")
             },
             {
                 "id": 5,
-                "longitude": "33.30109", 
-                "latitude": "35.78644",
+                "latitude": "33.30109", 
+                "longitude": "35.78644",
                 "description": ("hermon"),
                 "altitude": "2064.0",
                 "name": ("חרמון")
             },
             {
                 "id": 6,
-                "longitude": "33.27211", 
-                "latitude": "35.19454",
+                "latitude": "33.27211", 
+                "longitude": "35.19454",
                 "description": ("accer"),
                 "altitude": "0.0",
                 "name": ("עכו")
