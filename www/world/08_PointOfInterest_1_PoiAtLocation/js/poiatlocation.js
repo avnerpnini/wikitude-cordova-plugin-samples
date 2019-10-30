@@ -69,12 +69,30 @@ var World = {
             /* Creates a poi object with a random location near the user's location. */
             var poiData = {
                 "id": 1,
-                "longitude": 32.677081, 
-                "latitude": 35.239265 , 
+                "longitude": 32.677077,  
+                "latitude": 35.238919, 
                 "altitude": 230.0
             };
 
+            var poiData2 = {
+                "id": 2,
+                "longitude": 32.677077,  
+                "latitude": 35.238919, 
+                "altitude": 100.0
+            };
+
+            var poiData3 = {
+                "id": 3,
+                "longitude": 32.677077,  
+                "latitude": 35.238919, 
+                "altitude": 0.0
+            };
+
+            
+
             World.loadPoisFromJsonData(poiData);
+            World.loadPoisFromJsonData(poiData2);
+            World.loadPoisFromJsonData(poiData3);
             World.initiallyLoadedData = true;
         }
     },
