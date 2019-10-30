@@ -40,7 +40,7 @@ var World = {
         });
 
         /* Updates status message as a user feedback that everything was loaded properly. */
-        World.updateStatusMessage('1 place loaded');
+        World.updateStatusMessage('2 place loaded');
     },
 
     /* Updates status message shown in small "i"-button aligned bottom center. */
