@@ -154,6 +154,22 @@ var World = {
                 "altitude": "0.0",
                 "name": ("עכו")
             },
+             {
+                "id": 7,
+                "latitude": "31.754325", 
+                "longitude": "35.236833",
+                "description": ("accer"),
+                "altitude": "792.0",
+                "name": ("מטה ארמון הנציב")
+            },
+             {
+                "id": 8,
+                "latitude": "31.778112", 
+                "longitude": "35.235510",
+                "description": ("accer"),
+                "altitude": "792.0",
+                "name": ("הר הבית")
+            },
 
         ];
         
