@@ -108,69 +108,60 @@ var World = {
         var poiData = [
             {
                 "id": 1,
-                "latitude": "32.686753", 
-                "longitude": "35.390209",
-                "description": ("tavor"),
-                "altitude": "560.0",
-                "name": ("תבור")
+                "latitude": "32.757325", 
+                "longitude": "35.296737",
+                "description": (""),
+                "altitude": "245",
+                "name": ("מצפה הושעיה")
             },
             {
                 "id": 2,
-                "latitude": "32.67259", 
-                "longitude": "35.08854",
-                "description": ("muchraka"),
-                "altitude": "463.0",
-                "name": ("מוחרקה")
+                "latitude": "32.795556", 
+                "longitude": "35.369618",
+                "description": (""),
+                "altitude": "529.0",
+                "name": ("הר תורען")
             },
             {
                 "id": 3,
-                "latitude": "32.53560", 
-                "longitude": "35.37498",
-                "description": ("gilboa"),
-                "altitude": "294.0",
-                "name": ("גילבוע")
+                "latitude": "32.776669", 
+                "longitude": "35.263693",
+                "description": (""),
+                "altitude": "145.0",
+                "name": ("מאגר אשכול")
             },
             {
                 "id": 4,
                 "latitude": "32.98995", 
-                "longitude": "35.41678",
-                "description": ("miron"),
-                "altitude": "1145.0",
-                "name": ("מירון")
+                "longitude": "32.810969",
+                "description": (""),
+                "altitude": "170.0",
+                "name": ("כפר מנדא")
             },
             {
                 "id": 5,
-                "latitude": "33.30109", 
-                "longitude": "35.78644",
-                "description": ("hermon"),
-                "altitude": "2064.0",
-                "name": ("חרמון")
+                "latitude": "32.824209", 
+                "longitude": "35.266356",
+                "description": (""),
+                "altitude": "548.0",
+                "name": ("הר עצמון")
             },
             {
                 "id": 6,
-                "latitude": "33.27211", 
-                "longitude": "35.19454",
-                "description": ("accer"),
-                "altitude": "0.0",
-                "name": ("עכו")
+                "latitude": "32.760070", 
+                "longitude": "35.023647",
+                "description": (""),
+                "altitude": "432.0",
+                "name": ("אונ' חיפה")
             },
              {
                 "id": 7,
-                "latitude": "31.754325", 
-                "longitude": "35.236833",
+                "latitude": "32.782017", 
+                "longitude": "35.328322",
                 "description": ("accer"),
-                "altitude": "792.0",
-                "name": ("מטה ארמון הנציב")
-            },
-             {
-                "id": 8,
-                "latitude": "31.778112", 
-                "longitude": "35.235510",
-                "description": ("accer"),
-                "altitude": "792.0",
-                "name": ("הר הבית")
-            },
-
+                "altitude": "404.0",
+                "name": ("בית רימון")
+            }
         ];
         
         // for (var i = 0; i < poisToCreate; i++) {
