@@ -158,7 +158,7 @@ var World = {
                 "id": 7,
                 "latitude": "32.782017", 
                 "longitude": "35.328322",
-                "description": ("accer"),
+                "description": (""),
                 "altitude": "404.0",
                 "name": ("בית רימון")
             }
