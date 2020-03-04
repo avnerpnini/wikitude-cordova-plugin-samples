@@ -14,10 +14,6 @@
     <allow-intent href="*" />
     <allow-navigation href="*" />
 
-    <!--ar-->
-    <plugin name="https://github.com/Wikitude/wikitude-cordova-plugin" spec="6ac989c5fe3711c8ee619934f3679d251f680af6" />                     <!--ar-->
-    <!--ar-->
-
     <preference name="phonegap-version" value="cli-9.0.0" />
     <preference name="orientation" value="default" />
     <preference name="prerendered-icon" value="true" />
