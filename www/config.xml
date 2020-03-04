@@ -112,7 +112,7 @@
         <plugin name="com.wikitude.phonegap.wikitudeplugin" spec="8.10.1" source="npm" />                     <!--ar-->
     </platform>
     <platform name="ios">
-        <plugin name="com.wikitude.phonegap.wikitudeplugin" spec="6.1.0" source="npm" />                     <!--ar-->
+        <plugin name="com.wikitude.phonegap.wikitudeplugin" spec="7.0.0" source="npm" />                     <!--ar-->
     </platform>
     
 
