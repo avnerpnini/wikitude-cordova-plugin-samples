@@ -101,5 +101,6 @@
         
     <plugin name="cordova-plugin-file" source="npm" /><!--ar-->
     <plugin name="com.wikitude.phonegap.wikitudeplugin" spec="6.1.0" source="npm" /><!--ar-->
+    <preference name="android-minSdkVersion" value="21" />
 
 </widget>
