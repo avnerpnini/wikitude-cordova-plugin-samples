@@ -16,9 +16,6 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
-const MY_SDK_KEY = "jBfX0Z4u+qAKj8WLl5tb1rUxqR4RyYupkyJinxuhRz9rZWhSX7uDx+Y6nga0oUVqrJWj4Z9W/4WMbjWf64myoVtCipXtif5HmQ2+Qn7XDHg+xfXpCe8hS4QqWGGs79zlYHFLqHn28mN66ohCxMpnMVL53sRbpi+GaHs6zbZBsUdTYWx0ZWRfXwbC18ZkWlnOnIhmL6/vQLz4U1dzWkyDMqFvWn0/8HpbIdtgx2N7Oq7Y2A5AzxF+JVqvtEiddVyEqKX4zXLcjCdJCUEe1jMv/juMtZVH199cpCFToKlixqjipwpdfQLtetLIWN7usO3eF615sPjXu0NyrOlS+c9EzFKqv5jhEPqd9YmwFqEn1tR/CgGaMx4ne/mbp8wA/p/PYjO6NRVRpy84wXfZ9wDmj2QDsQIIUmtc4X5Me4oXv/bbeKVVvxsCcEPKgeqDPmNdcm5ukURirkZmmYjQIvyTweZ/incxhV3L1+4wXrWD4vSO9qd1bLoho9YGZrtFIcOHDKQfQ1s5FPp7WB3HYIySt6PSNNGfS7J7oq3N7MyvLYy1FPBgIoAWWwkAKBqt0HB/b3yvoy9PlsY0VWIoAn8g6rhMjkOQhmuICFo2+pUwu28CpBy3GgpG5CyPgx2VLyVpcPPP5v7Tb2Vi3pMfa7FmC14ypsnARWcABxVXsWjT/BURkQd2058kkRpfvtmXFHkzY/+LBH5rRYCvZdvjLE2zyhzTjAMsUlUru1BhAlz/ScL4hk0LWoDzYjaFkipd3eXu";
-
 var app = {
 
     // represents the device capability of launching ARchitect Worlds with specific features
@@ -42,12 +39,18 @@ var app = {
         // set a callback for android that is called once the back button was clicked.
         if ( cordova.platformId == "android" ) {
             app.wikitudePlugin.setBackButtonCallback(app.onBackButton);
-        } else { // assumes iOS is the only alternative
-            app.wikitudePlugin.setErrorHandler(app.onRuntimeError);
         }
         app.wikitudePlugin.setJSONObjectReceivedCallback(app.onJSONObjectReceived);
     },
-    continueLoadingExampleARchitectWorld: function(example) {
+    // --- Wikitude Plugin ---
+    loadExampleARchitectWorld: function(example) {
+
+        app.isArchitectWorldLoaded = false;
+        // inject poi data using phonegap's GeoLocation API and inject data using World.loadPoisFromJsonData
+        if ( example.requiredExtension === "ObtainPoiDataFromApplicationModel" ) {
+            prepareApplicationDataModel();
+        }
+
         /* cordova.file.applicationDirectory is used to demonstrate the use of the cordova file plugin in combination with the Wikitude plugin */
         /* The length check here is only necessary because for each example the same 'example' object is given here and we only want to change the path once. */
         if ( example.path.length > cordova.file.applicationDirectory ) {
@@ -59,23 +62,6 @@ var app = {
         app.prepareArchitectWorld(example, function() {
             app.loadARchitectWorld(example);
         });
-    },
-    // --- Wikitude Plugin ---
-    loadExampleARchitectWorld: function(example) {
-
-        app.isArchitectWorldLoaded = false;
-
-        if ( example.requiredExtension === "ObtainPoiDataFromApplicationModel" ) {
-            navigator.geolocation.getCurrentPosition(
-                function() {
-                    app.continueLoadingExampleARchitectWorld(example);
-                },
-                function() {
-                    alert("Failed to get the current device position.");
-                });
-        } else {
-            app.continueLoadingExampleARchitectWorld(example);
-        }
     },
     loadCustomARchitectWorldFromURL: function(url) {
         var customArchitectWorld = {
@@ -124,7 +110,6 @@ var app = {
 
                 /* in case the loaded Architect World belongs to the 'obtain poi data from application model' example, we can now safely inject poi data. */
                 if ( architectWorld.requiredExtension === "ObtainPoiDataFromApplicationModel" ) {
-                    prepareApplicationDataModel();
                     injectGeneratedPoiJsonData();
                 }
             }, function errorFn(error) {
@@ -150,46 +135,10 @@ var app = {
             } else if (jsonObject.action === "present_poi_details") {
                 var alertMessage = "Poi '" + jsonObject.id + "' selected\nTitle: " + jsonObject.title + "\nDescription: " + jsonObject.description;
                 alert(alertMessage);
-            } else if (jsonObject.action === "save_current_instant_target") {
-                window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
-                    fileSystem.root.getFile("SavedAugmentations.json", {create: true, exclusive: false}, function(fileEntry){
-                        fileEntry.createWriter(function(writer){
-                            writer.write(jsonObject.augmentations);
-                        }, app.saveError);
-                    }, app.saveError);
-                }, app.saveError);
-                app.wikitudePlugin.callJavaScript("World.saveCurrentInstantTargetToUrl(\"" + cordova.file.dataDirectory + "SavedInstantTarget.wto" + "\");")
-            } else if (jsonObject.action === "load_existing_instant_target") {
-                window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
-                    fileSystem.root.getFile("SavedAugmentations.json", null, function(fileEntry){
-                        fileEntry.file(function(file){
-                            var reader = new FileReader();
-                            reader.onloadend = function(evt) {
-                                var augmentations = evt.target.result;
-                                app.wikitudePlugin.callJavaScript("World.loadExistingInstantTargetFromUrl(\"" + cordova.file.dataDirectory + "SavedInstantTarget.wto" + "\"," + augmentations + ");");
-                            };
-                            reader.readAsText(file);
-                        }, app.loadError);
-                    }, app.loadError);
-                }, app.loadError);
             }
         }
     },
-    saveError: function(error) {
-        alert("Could not save the current instant target.");
-    },
-    loadError: function(error) {
-        alert("Could not load instant target, please save it first.");
-    },
-    onRuntimeError: function (error) {
-        if (error.code == 960) {
-            var openAppSettings = confirm(error.message + '\nOpen App Settings?');
-            if (openAppSettings == true) {
-                app.wikitudePlugin.openAppSettings();
-            }
-        }
-    },
-    onBackButton: function () {
+    onBackButton: function() {
         /* Android back button was pressed and the Wikitude PhoneGap Plugin is now closed */
     },
     showBuildInformation: function() {
