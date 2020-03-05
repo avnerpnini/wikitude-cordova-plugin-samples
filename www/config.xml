@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "arnivut.net.wtg"
+        id        = "arV6.nivut.net.wtg"
         versionCode = "3009"
         version   = "2.3.0">
-    <name>מציאות רבודה</name>
+    <name>מציאות רבודה V6</name>
 
     <description>
        משחקי ניווט סלולרים
@@ -87,6 +87,6 @@
         </platform>
         
         <plugin name="cordova-plugin-file" source="npm" /><!--ar-->
-        <plugin name="https://github.com/avnerpnini/wikitude-cordova-plugin.git"  /><!--ar-->
+        <plugin name="com.wikitude.phonegap.wikitudeplugin" spec="6.1.0" source="npm" /><!--ar-->
 
 </widget>
